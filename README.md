@@ -31,13 +31,17 @@ My initial ideas were mostly errors I noticed that I wanted fixed such as the co
 ### 1340 Supplement
 
 - #### 1. Correctness
+What mmakes a CSV parser correct/the properties we should be testing consists of proper formatting such as quotes around fields with commas, same number of columns for all rows, and proper handling of empty values or rows/columns.
 
 - #### 2. Random, On-Demand Generation
+You could generate very large csv files to cover most edge cases. Could also test how large a csv file the parser can handle.
 
 - #### 3. Overall experience, Bugs encountered and resolved
-#### Errors/Bugs: 
-#### Tests: 
-#### How To… run tests with npm test. Run program with 
+This sprint differed from previous assignments as it was done in typescript, and we were actually encouraged to consult with an LLM for one of the questions to aid our brainstorming which was surprising. I did find bugs with the pre-existing code through testing, but did not yet fix them as that was said to be part of next week's sprint.
+
+#### Errors/Bugs: My parser has an error if the header type of the csv files is different than the schema.
+#### Tests: In my tests, I covered a base cases where a schema consisting of a tuple of a string and number is taken in. I also tested the case where the schema is undefined so the function should just return the normal string[][]. Lastly, I also tested a case where the parser would return an error because it wouldn't be able to transform each row via the given schema because of a wrong type.
+#### How To… run tests with npm test.
 
 #### Team members and contributions (include cs logins): None
 
